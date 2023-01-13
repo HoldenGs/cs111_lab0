@@ -4,8 +4,25 @@
 #include <linux/seq_file.h>
 #include <linux/sched.h>
 
+static struct proc_dir_entry *entry;
+
+static int run(struct seq_file *m, void *v) {
+	int count = 0;
+	char str[80];
+	struct task_struct *p;
+
+	for_each_process(p) {
+		count++;
+	}
+	
+	sprintf(str, "%d processes are running\n", count);
+	seq_printf(m, str);
+	return 0;
+}
+
 static int __init proc_count_init(void)
 {
+	entry = proc_create_single("count", 0, NULL, run);
 	pr_info("proc_count: init\n");
 	return 0;
 }
