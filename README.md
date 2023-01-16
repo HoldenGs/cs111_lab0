@@ -1,6 +1,6 @@
 # A Kernel Seedling
 
-This is a module that creates a virtual file at /proc/count.
+Kernel Seedling is a kernel module that creates a virtual file at /proc/count.
 The contents of this file contains a string that displays the
 number of currently running processes.
 
