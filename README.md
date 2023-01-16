@@ -32,7 +32,7 @@ After running `make`.
 
 Explain how to remove your kernel module and clean up the code
 
-To remove the module and delete the file, run:
+To remove the module and delete the virtual file, run:
 
 ```
 sudo rmmod proc_count.ko
@@ -40,7 +40,13 @@ sudo rmmod proc_count.ko
 
 ## Testing
 
-Report which kernel release version you tested your module on
-(hint: use `uname`, check for options with `man uname`).
-It should match release numbers as seen on https://www.kernel.org/.
+This code is tested on release 5.14.8-arch1-1 of Arch Linux.
+It is not guaranteed to work on any prior or later versions.
+To test the module, you can run:
+
+```
+python -m unittest
+```
+
+The expected output is 3 successful tests.
 
