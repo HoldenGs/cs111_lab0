@@ -15,7 +15,7 @@ static int run(struct seq_file *m, void *v) {
 		count++;
 	}
 	
-	sprintf(str, "%d processes are running\n", count);
+	sprintf(str, "%d\n", count);
 	seq_printf(m, str);
 	return 0;
 }
@@ -29,6 +29,7 @@ static int __init proc_count_init(void)
 
 static void __exit proc_count_exit(void)
 {
+	proc_remove(entry);
 	pr_info("proc_count: exit\n");
 }
 
