@@ -44,3 +44,8 @@ python -m unittest
 
 The expected output is 3 successful tests.
 
+Be aware that tampering with module code can cause the system to enter
+into failure modes from which the only recourse is to delete and reinstall
+your machine. As such, you are encouraged to thoroughly test this code
+in a VM before using it in your daily machine.
+
